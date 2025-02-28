@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Qué es un secador iónico? - Secadores Iónicos</title>
+    <link rel="icon" type="image/png" href="imagenes/white_on_black.png">
+    <style>
+        /* Estilos iguales al index.html */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f4f4f4;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        p {
+            text-align: center;
+        }
+
+        header {
+            background: black;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            position: relative;
+        }
+
+        header img {
+            height: 150px;
+            transition: transform 0.3s ease;
+        }
+
+        header img:hover {
+            transform: scale(1.1);
+        }
+        img {
+            height: 200px;
+        }
+
+        .menu {
+            position: fixed;
+            top: 0;
+            left: -250px;
+            width: 250px;
+            height: 100%;
+            background: #222;
+            transition: left 0.3s;
+            padding-top: 60px;
+            z-index: 1000;
+        }
+
+        .menu a {
+            display: block;
+            padding: 15px 20px;
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            transition: background 0.3s ease;
+        }
+
+        .menu a:hover {
+            background: #444;
+        }
+
+        .menu-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            font-size: 30px;
+            cursor: pointer;
+            color: white;
+            z-index: 1001;
+            transition: all 0.3s ease;
+        }
+
+        .menu-btn:hover {
+            color: aqua;
+            transform: translateX(5px);
+        }
+
+        .content {
+            padding: 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2.5rem;
+            color: #333;
+        }
+
+        .section {
+            margin-bottom: 40px;
+            padding: 20px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .section:hover {
+            transform: translateY(-10px);
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .section img {
+            border-radius: 8px;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .section:hover img {
+            transform: scale(1.05);
+        }
+
+        .section h2 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .section p {
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 20px;
+            text-align: left;
+            line-height: 1.6;
+        }
+
+        .ver-mas {
+            display: inline-block;
+            background: black;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+
+        .ver-mas:hover {
+            background: #444;
+        }
+
+        .comprar {
+            display: inline-block;
+            background: #ff6f00;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .comprar:hover {
+            background: #e65c00;
+        }
+
+        .volver {
+            display: inline-block;
+            background: #333;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .volver:hover {
+            background: #444;
+        }
+
+        footer {
+            background: black;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 60px;
+        }
+
+        footer a {
+            color: #67c3f8;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: rgb(149, 241, 241);
+        }
+
+        footer p {
+            margin: 10px 0;
+        }
+        .botonvuelta {
+            width: 200px;
+            margin: 0 auto;
+            transition: all 0.3s ease;
+        }
+        .botonvuelta:hover {
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="menu-btn" onclick="toggleMenu()">☰</div>
+        <img onclick="window.location.href='/../'" src="imagenes/white_on_trans.png" alt="Logo de la marca">
+    </header>
+
+    <!-- Menú lateral -->
+    <div class="menu" id="menu">
+        <div class="menu-btn" onclick="toggleMenu()">☰</div>
+        <a href="index.html">Inicio</a>
+        <a href="que.html">Que es</a>
+        <a href="como.html">Como funciona</a>
+        <a href="beneficios.html">Beneficios</a>
+        <a href="elegir.html">Como elegir</a>
+        <a href="recomendaciones.html">Recomendaciones</a>
+        <a href="reseñas/">Reseñas</a>
+        <a href="mailto:adrigo476@gmail.com">Contacto</a>
+
+    </div>
+
+    <!-- Contenido -->
+    <div class="content">
+        <h1>¿Para que sirve un secador iónico?</h1>
+
+        <div class="section">
+            <h2>¿Para que sirve un secador iónico?</h2>
+            <img src="imagenes/rizos 4.jpg" alt="Tecnología iónica">
+            <p>
+                Un secador iónico sirve para <strong> reducir el frizz y el encrespamiento</strong>, dejando el cabello más liso y fácil de peinar.        
+            </p>
+            <p>
+                Además, ayuda a <strong>sellar la cutícula</strong>, lo que mantiene la hidratación y aporta un brillo natural. Gracias a la emisión de iones, acelera el tiempo de secado al romper las moléculas de agua más rápido. También minimiza el daño por calor, protegiendo el cabello durante el proceso.            </p>
+            <p>
+                Es ideal para cabellos finos o dañados, ya que <strong>aporta suavidad y volumen</strong> sin apelmazar.            
+            </p>
+            <p>
+                <strong>En resumen</strong>, mejora la textura del cabello, dejándolo más sedoso y con un acabado profesional.
+            </p>
+        </div>
+        
+
+        <div class="section">
+            <h2>¿Qué secador iónico comprar?</h2>
+            <p>
+                Si estás buscando un secador iónico de alta calidad, te recomendamos el <strong>Dyson Supersonic Nural HD16</strong>. es la última evolución de la serie Supersonic, destacando por su diseño vanguardista y motor digital de alta velocidad. <strong>Con 1600W de potencia</strong>, su flujo de aire optimizado permite...
+            </p>
+            <a href="reseñas/" class="comprar">Ver reseñas</a>
+        </div>
+
+    </div>
+    <div class="botonvuelta">
+        <a href="index.html" class="volver">Volver al inicio</a>
+    </div>
+
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Ionic Curls - Todos los derechos reservados</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById("menu");
+            if (menu.style.left === "0px") {
+                menu.style.left = "-250px";
+            } else {
+                menu.style.left = "0px";
+            }
+        }
+    </script>
+
+</body>
+</html>

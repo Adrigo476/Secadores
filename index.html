@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secadores Iónicos</title>
+    <link rel="icon" type="image/png" href="imagenes/white_on_black.png">
+    <style>
+        /* Reset básico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        .subtitulo {
+            margin-bottom: 50px;
+        }
+
+        body {
+            background: #f4f4f4;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        p {
+            text-align: center;
+        }
+
+        /* Header */
+        header {
+            background: black;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            position: relative;
+        }
+
+        header img {
+            height: 150px;
+            transition: transform 0.3s ease;
+        }
+
+        header img:hover {
+            transform: scale(1.1);
+        }
+
+        /* Menú lateral extensible */
+        .menu {
+            position: fixed;
+            top: 0;
+            left: -250px;
+            width: 250px;
+            height: 100%;
+            background: #222;
+            transition: left 0.3s;
+            padding-top: 60px;
+            z-index: 1000;
+        }
+
+        .menu a {
+            display: block;
+            padding: 15px 20px;
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            transition: background 0.3s ease;
+        }
+
+        .menu a:hover {
+            background: #444;
+        }
+
+        .menu-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            font-size: 30px;
+            cursor: pointer;
+            color: white;
+            z-index: 1001;
+            transition: all 0.3s ease;
+        }
+
+        .menu-btn:hover {
+            color: aqua;
+            transform: translateX(5px);
+        }
+
+        .content {
+            padding: 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2.5rem;
+            color: #333;
+        }
+
+        .section {
+            margin-bottom: 40px;
+            padding: 20px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .section:hover {
+            transform: translateY(-10px);
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .section img {
+            height: 500px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .section:hover img {
+            transform: scale(1.05);
+        }
+
+        .section h2 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .section p {
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .ver-mas {
+            display: inline-block;
+            background: black;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+
+        .ver-mas:hover {
+            background: #444;
+        }
+
+        footer {
+            background: black;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 60px;
+        }
+
+        footer a {
+            color: #ffffff;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        footer a:hover {
+            color: rgb(149, 241, 241);
+            transform: translateY(-5px);
+        }
+
+        footer p {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <img src="imagenes/white_on_trans.png" alt="Logo de la marca">
+    </header>
+
+    <!-- Menú lateral -->
+    <div class="menu" id="menu">
+        <div class="menu-btn" onclick="toggleMenu()">☰</div>
+        <a href="index.html">Inicio</a>
+        <a href="que.html">Que es</a>
+        <a href="como.html">Como funciona</a>
+        <a href="beneficios.html">Beneficios</a>
+        <a href="elegir.html">Como elegir</a>
+        <a href="recomendaciones.html">Recomendaciones</a>
+        <a href="reseñas/">Reseñas</a>
+        <a href="mailto:adrigo476@gmail.com">Contacto</a>
+    </div>
+
+    <!-- Contenido -->
+    <div class="content">
+        <div class="subtitulo">
+            <h1>Secadores de pelo iónicos</h1>
+            <p><strong>¡La mejor opción para tus rizos!</strong></p>
+        </div>
+
+        <div class="section">
+            <img src="imagenes/rizos.jpg" alt="que es secador iónico">
+            <h2>¿Qué es un secador iónico?</h2>
+            <p>Un secador iónico es un dispositivo que emite iones negativos para reducir el frizz y mejorar la salud del cabello.</p>
+            <a href="que.html" class="ver-mas">Ver más ↓</a>
+        </div>
+
+        <div class="section">
+            <img src="imagenes/rizos2.jpg" alt="Tecnología iónica">
+            <h2>¿Cómo funciona un secador iónico?</h2>
+            <p>Emite iones negativos que neutralizan la carga positiva del cabello, sellando la cutícula y reduciendo el frizz. A diferencia de los secadores tradicionales, minimiza el daño por calor y acelera el secado.</p>
+            <a href="como.html" class="ver-mas">Ver más ↓</a>
+        </div>
+
+        <div class="section">
+            <img src="imagenes/rizos3.jpg" alt="Cabello rizado">
+            <h2>Beneficios de un secador iónico para cabello rizado</h2>
+            <p>Reduce el frizz, define los rizos, acelera el secado y causa menos daño por calor. Además, aporta hidratación natural y un brillo saludable.</p>
+            <a href="beneficios.html" class="ver-mas">Ver más ↓</a>
+        </div>
+
+        <div class="section">
+            <img src="https://m.media-amazon.com/images/I/41k1+ffLHsL._AC_.jpg" alt="Elección de secador">
+            <h2>Cómo elegir el mejor secador iónico</h2>
+            <p>Busca potencia adecuada, control de temperatura, tecnología adicional (cerámica, turmalina) y accesorios como difusores para cabello rizado.</p>
+            <a href="elegir.html" class="ver-mas">Ver más ↓</a>
+        </div>
+
+        <div class="section">
+            <img src="https://m.media-amazon.com/images/I/71goM-qoeOL.jpg" alt="Opiniones de usuarios">
+            <h2>Opiniones y recomendaciones de secadores iónicos</h2>
+            <p>Marcas como Dyson, Babyliss o Revlon son altamente recomendadas. Elige según tu presupuesto, priorizando calidad y funciones específicas para tu tipo de cabello.</p>
+            <a href="recomendaciones.html" class="ver-mas">Ver más ↓</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Ionic Curls - Todos los derechos reservados</p>
+        <p><a href="mailto:adrigo476@gmail.com">Contacto</a> | <a href="pie/legal.html">Aviso Legal</a> | <a href="pie/privacidad.html">Política de Privacidad</a></p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById("menu");
+            if (menu.style.left === "0px") {
+                menu.style.left = "-250px";
+            } else {
+                menu.style.left = "0px";
+            }
+        }
+    </script>
+
+</body>
+</html>

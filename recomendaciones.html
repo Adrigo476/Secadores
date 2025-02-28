@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hall Principal</title>
+    <link rel="icon" type="image/png" href="imagenes/white_on_black.png">
+    <style>
+
+header, footer { background: black; color: white; text-align: center; padding: 20px; }
+        .content { max-width: 1200px; margin: auto; padding: 20px; }
+        h1 {text-align: center;}
+        .menu {
+            position: fixed;
+            top: 0;
+            left: -250px;
+            width: 250px;
+            height: 100%;
+            background: #222;
+            transition: left 0.3s;
+            padding-top: 60px;
+            z-index: 1000;
+        }
+        .menu a {
+            display: block;
+            padding: 15px 20px;
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            transition: background 0.3s ease;
+        }
+        .menu a:hover { background: #444; }
+        .menu-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            font-size: 30px;
+            cursor: pointer;
+            color: white;
+            z-index: 1001;
+            transition: all 0.3s ease;
+        }
+        .menu-btn:hover { color: aqua; transform: translateX(5px); }
+        body { background: #f4f4f4; font-family: Arial, sans-serif; margin: 0; padding: 0; }
+        header, footer { background: black; color: white; text-align: center; padding: 20px; }
+        .content { max-width: 1200px; margin: auto; padding: 20px; }
+        .categoria { margin-bottom: 40px; }
+        .titulo { font-size: 2rem; margin-bottom: 10px; color: #333; }
+        .subcategoria { font-size: 1.5rem; margin-bottom: 10px; color: #555; display: flex; justify-content: space-between; align-items: center; }
+        .productos { display: flex; overflow-x: auto; gap: 15px; padding: 10px; }
+        .producto {
+            flex: 0 0 auto; width: 200px; background: white; padding: 10px; border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0,0,0,0.1); text-align: center; transition: transform 0.3s;
+        }
+        .producto:hover { transform: translateY(-4px); cursor: pointer; }
+        .producto img { width: 100%; border-radius: 8px; }
+        .ver-mas { position: relative; background: rgba(59, 54, 44, 0.122); color: white; display: flex;
+                   align-items: center; justify-content: center; font-size: 1.2rem; }
+        .ver-mas:hover { background: rgba(167, 111, 51, 0.311); }
+        header img {
+            height: 150px;
+            transition: transform 0.3s ease;
+        }
+        header img:hover {
+            transform: scale(1.1);
+        }
+        a {color: #f4f4f4; text-decoration: none;}
+        .botonvuelta {
+            position: relative; background: #333; color: white; display: flex;
+            align-items: center; justify-content: center; font-size: 1.2rem; height: 100%; 
+            padding: 10px;
+            text-decoration: none;
+            border-radius: 10px;
+            width: 200px;
+            margin: 0 auto;
+            transition: all 0.3s ease;
+        }
+        .botonvuelta:hover {
+            transform: translateY(-5px);
+            background-color: #444;
+        }
+        .ver-mas-link {
+            font-size: 1rem;
+            color: #555;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        .ver-mas-link:hover {
+            color: #333;
+        }
+        .ver-mas-link::after {
+            content: '→';
+            margin-left: 5px;
+            transition: transform 0.3s ease;
+        }
+        .ver-mas-link:hover::after {
+            transform: translateX(5px);
+        }
+
+        /* Estilos anteriores... */
+
+        .producto {
+            position: relative;
+            flex: 0 0 auto; width: 200px; background: white; padding: 10px; border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0,0,0,0.1); text-align: center; transition: transform 0.3s;
+        }
+        .producto:hover { transform: translateY(-4px); cursor: pointer; }
+        .producto img { width: 100%; border-radius: 8px; }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            border-radius: 10px;
+            padding: 10px;
+        }
+
+        .producto:hover .overlay {
+            opacity: 1;
+        }
+
+        .progress-bar {
+            width: 80%;
+            background: #444;
+            border-radius: 5px;
+            overflow: hidden;
+            margin: 5px 0;
+        }
+
+        .progress-bar-fill {
+            height: 10px;
+            background: #007BFF;
+            width: 0;
+            transition: width 0.5s ease;
+        }
+
+        .progress-label {
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+        }
+        .producto img {max-width: 100px;}
+        .especial {
+            background-color: orange;
+            border: 1px;
+            border-radius: 10px;
+            color: white;
+            padding: 10px 730px 10px 20px;
+            transition: all 0.3s ease;
+        }
+        .especial:hover {
+            scale: 1.;
+            padding-right: 800px;
+
+
+        }
+        .comprar {
+            display: inline-block;
+            background: #ff6f00;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .comprar:hover {
+            background: #e65c00;
+        }
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <img onclick="window.location.href='/../'" src="imagenes/white_on_trans.png" alt="Logo">
+    </header>
+    <div class="menu" id="menu">
+        <div class="menu-btn" onclick="toggleMenu()">☰</div>
+        <a href="index.html">Inicio</a>
+        <a href="que.html">Que es</a>
+        <a href="como.html">Como funciona</a>
+        <a href="beneficios.html">Beneficios</a>
+        <a href="elegir.html">Como elegir</a>
+        <a href="recomendaciones.html">Recomendaciones</a>
+        <a href="reseñas/">Reseñas</a>
+        <a href="mailto:adrigo476@gmail.com">Contacto</a>
+
+    </div>
+    <div class="content">
+        <h1>Elige tu Secador Ionico</h1>
+        <div class="categoria">
+            <h2 class="titulo">Nuestras Recomendaciones</h2>
+            <div class="subcategoria">
+                <a href="reseñas/index.html" class="subcategoria especial">Reseñas</a>
+                <a href="reseñas/index.html" class="ver-mas-link">Ver más</a>
+            </div>
+            <div class="productos">
+                <div class="producto" onclick="window.location.href='https://amzn.to/3XFjUEn'">
+                    <img src="https://m.media-amazon.com/images/I/61Toqidjv0L._AC_UL480_FMwebp_QL65_.jpg" alt="Producto">
+                    <p>Parlux Powerlight 385</p>
+                    <div class="overlay">
+                        <div class="progress-label">Precio: 126,10€</div>
+                        <div class="progress-bar">
+                            <div class="progress-bar-fill" style="width: 70%;"></div>
+                        </div>
+                        <div class="progress-label">Calidad-Precio</div>
+                        <div class="progress-bar">
+                            <div class="progress-bar-fill" style="width: 68%;"></div>
+                        </div>
+                        <div class="progress-label">Potencia</div>
+                        <div class="progress-bar">
+                            <div class="progress-bar-fill" style="width: 87%;"></div>
+                        </div>
+                        <div class="progress-label">Nuestra Valoración</div>
+                        <div class="progress-bar">
+                            <div class="progress-bar-fill" style="width: 85%;"></div>
+                        </div>
+                    </div>
+                    <a href="" class="comprar">Comprar en Amazon</a>
+
+                </div>
+                <div class="producto" onclick="window.location.href='https://www.amazon.es/Cecotec-110000rpm-Inteligente-Temperaturas-Velocidades/dp/B0CL7D99ZL?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&content-id=amzn1.sym.ddced52f-24c5-4d9d-bb51-4b4fa0ae53ac%3Aamzn1.sym.ddced52f-24c5-4d9d-bb51-4b4fa0ae53ac&crid=1YP9FV1WDZZP5&cv_ct_cx=secador%2Bbamba%2Bcecotec&keywords=secador%2Bbamba%2Bcecotec&pd_rd_i=B0CL7D99ZL&pd_rd_r=b4c7e400-7fdc-4396-af51-200d0b139676&pd_rd_w=IQfi3&pd_rd_wg=2QBD3&pf_rd_p=ddced52f-24c5-4d9d-bb51-4b4fa0ae53ac&pf_rd_r=JD7WKVEGYWVFMSCJ7001&qid=1740476130&sbo=RZvfv%2F%2FHxDF%2BO5021pAnSA%3D%3D&sprefix=secador%2Bbamba%2Bcecotec%2Caps%2C152&sr=1-3-8eedd566-4315-492b-9eff-909bf0ae60fe&th=1&linkCode=ll1&tag=adrigo03-21&linkId=22db48c470a51f7d61fb94580d57e9bb&language=es_ES&ref_=as_li_ss_tl'">
+                    <img src="https://m.media-amazon.com/images/I/51vVNoHwbvL._AC_UL480_FMwebp_QL65_.jpg" alt="Producto">
+                    <p>Cecotec Secador de Pelo Bamba IoniCare Rockstar Nano IonTech. 1600W</p>
+                    <div class="overlay">
+                        <div class="progress-label">Precio: 59,90€</div>
+                        <div class="progress-bar">
+                            <div class="progress-bar-fill" style="width: 35%;"></div>
+                        </div>
+                        <div class="progress-label">Calidad-Precio</div>
+                        <div class="progress-bar">
+                            <div class="progress-bar-fill" style="width: 87%;"></div>
+                        </div>
+                        <div class="progress-label">Potencia</div>
+                        <div class="progress-bar">
+                            <div class="progress-bar-fill" style="width: 69%;"></div>
+                        </div>
+                        <div class="progress-label">Nuestra Valoración</div>
+                        <div class="progress-bar">
+                            <div class="progress-bar-fill" style="width: 85%;"></div>
+                        </div>
+                    </div>
+                    <a href="" class="comprar">Comprar en Amazon</a>
+
+                </div>
+                <div class="producto" onclick="window.location.href='https://amzn.to/3Qz6IN3'">
+                    <img src="https://m.media-amazon.com/images/I/61Lu9KsDjnL._AC_UL480_FMwebp_QL65_.jpg" alt="Producto">
+                    <p>Secador de cabello iónico Babyliss Pro Caruso HQ 2400W</p>
+                    <div class="overlay">
+                        <div class="progress-label">Precio: 83,07€</div>
+                        <div class="progress-bar">
+                            <div class="progress-bar-fill" style="width: 48%;"></div>
+                        </div>
+                        <div class="progress-label">Calidad-Precio</div>
+                        <div class="progress-bar">
+                            <div class="progress-bar-fill" style="width: 90%;"></div>
+                        </div>
+                        <div class="progress-label">Potencia</div>
+                        <div class="progress-bar">
+                            <div class="progress-bar-fill" style="width: 100%;"></div>
+                        </div>
+                        <div class="progress-label">Nuestra Valoración</div>
+                        <div class="progress-bar">
+                            <div class="progress-bar-fill" style="width: 85%;"></div>
+                        </div>
+                    </div>
+                    <a href="" class="comprar">Comprar en Amazon</a>
+
+                </div>
+                <div class="producto" onclick="window.location.href='https://amzn.to/4idzSx1'">
+                    <img src="https://m.media-amazon.com/images/I/61vdu+MQbBL._AC_UL480_FMwebp_QL65_.jpg" alt="Producto" style="width: 50px;">
+                    <p>Xiaomi Mi Ionic Hair Dryer H500 White EU</p>
+                    <div class="overlay">
+                        <div class="progress-label">Precio: 55,00€</div>
+                        <div class="progress-bar">
+                            <div class="progress-bar-fill" style="width: 32%;"></div>
+                        </div>
+                        <div class="progress-label">Calidad-Precio</div>
+                        <div class="progress-bar">
+                            <div class="progress-bar-fill" style="width: 80%;"></div>
+                        </div>
+                        <div class="progress-label">Potencia</div>
+                        <div class="progress-bar">
+                            <div class="progress-bar-fill" style="width: 77%;"></div>
+                        </div>
+                        <div class="progress-label">Nuestra Valoración</div>
+                        <div class="progress-bar">
+                            <div class="progress-bar-fill" style="width: 85%;"></div>
+                        </div>
+                    </div>
+                    <a href="" class="comprar">Comprar en Amazon</a>
+
+                </div>
+                <div class="producto ver-mas" onclick="window.location.href='reseñas/'">Ver más</div>
+            </div>
+            <h2 class="titulo">Marcas</h2>
+            <div class="subcategoria">
+                <h3 class="subcategoria">Secadores ionicos Remington</h3>
+                <a href="marcas/Remington.html" class="ver-mas-link">Ver más</a>
+            </div>
+            <div class="productos">
+                <div class="producto" onclick="window.location.href='https://amzn.to/3XfDNBq'">
+                    <img src="https://m.media-amazon.com/images/I/51iPzRzptIL._AC_UL480_FMwebp_QL65_.jpg" alt="Producto">
+                    <p>Remington Secador de Pelo Pequeño Compacto</p>
+                    <div class="overlay">
+                        <div class="progress-label">Precio 16,00€</div>
+                        <div class="progress-bar">
+                            <div class="progress-bar-fill" style="width: 10%;"></div>
+                        </div>
+                        <div class="progress-label">Calidad-Precio</div>
+                        <div class="progress-bar">
+                            <div class="progress-bar-fill" style="width: 80%;"></div>
+                        </div>
+                        <div class="progress-label">Potencia</div>
+                        <div class="progress-bar">
+                            <div class="progress-bar-fill" style="width: 87%;"></div>
+                        </div>
+                        <div class="progress-label">Nuestra Valoración</div>
+                        <div class="progress-bar">
+                            <div class="progress-bar-fill" style="width: 85%;"></div>
+                        </div>
+                    </div>
+                    <a href="" class="comprar">Comprar en Amazon</a>
+
+                </div>
+                <div class="producto" onclick="window.location.href='https://amzn.to/43b6kMb'">
+                    <img src="https://m.media-amazon.com/images/I/51STTW5avXL._AC_UL480_FMwebp_QL65_.jpg" alt="Producto">
+                    <p>Remington Secador de Pelo Ionic Dry 2200</p>
+                    <div class="overlay">
+                        <div class="progress-bar">
+                            <div class="progress-label">Precio: 29,99€</div>
+                            <div class="progress-bar-fill" style="width: 16%;"></div>
+                        </div>
+                        <div class="progress-label">Calidad-Precio</div>
+                        <div class="progress-bar">
+                            <div class="progress-bar-fill" style="width: 80%;"></div>
+                        </div>
+                        <div class="progress-label">Potencia</div>
+                        <div class="progress-bar">
+                            <div class="progress-bar-fill" style="width: 95%;"></div>
+                        </div>
+                        <div class="progress-label">Nuestra Valoración</div>
+                        <div class="progress-bar">
+                            <div class="progress-bar-fill" style="width: 85%;"></div>
+                        </div>
+                    </div>
+                    <a href="" class="comprar">Comprar en Amazon</a>
+
+                </div>
+                <div class="producto" onclick="window.location.href='https://amzn.to/3DabDRB'">
+                    <img src="https://m.media-amazon.com/images/I/61UFiomlsbL._AC_UL480_FMwebp_QL65_.jpg" alt="Producto">
+                    <p>Remington Secador de Pelo Profesional Silk, Rejilla de Cerámica Sedosa</p>
+                    <div class="overlay">
+                        <div class="progress-bar">
+                            <div class="progress-label">Precio: 33,99€</div>
+                            <div class="progress-bar-fill" style="width: 20%;"></div>
+                        </div>
+                        <div class="progress-label">Calidad-Precio</div>
+                        <div class="progress-bar">
+                            <div class="progress-bar-fill" style="width: 80%;"></div>
+                        </div>
+                        <div class="progress-label">Potencia</div>
+                        <div class="progress-bar">
+                            <div class="progress-bar-fill" style="width: 100%;"></div>
+                        </div>
+                        <div class="progress-label">Nuestra Valoración</div>
+                        <div class="progress-bar">
+                            <div class="progress-bar-fill" style="width: 85%;"></div>
+                        </div>
+                    </div>
+                    <a href="" class="comprar">Comprar en Amazon</a>
+
+                </div>
+                <div class="producto" onclick="window.location.href='https://amzn.to/4ibeGYC'">
+                    <img src="https://m.media-amazon.com/images/I/61ekdIt1dvL._AC_UL480_FMwebp_QL65_.jpg" alt="Producto" style="max-width: 150px;">
+                    <p>Remington Secador de Pelo Ionic Dry 2200</p>
+                    <div class="overlay">
+                        <div class="progress-bar">
+                            <div class="progress-label">Precio: 33,99€</div>
+                            <div class="progress-bar-fill" style="width: 20%;"></div>
+                        </div>
+                        <div class="progress-label">Calidad-Precio</div>
+                        <div class="progress-bar">
+                            <div class="progress-bar-fill" style="width: 80%;"></div>
+                        </div>
+                        <div class="progress-label">Potencia</div>
+                        <div class="progress-bar">
+                            <div class="progress-bar-fill" style="width: 100%;"></div>
+                        </div>
+                        <div class="progress-label">Nuestra Valoración</div>
+                        <div class="progress-bar">
+                            <div class="progress-bar-fill" style="width: 85%;"></div>
+                        </div>
+                    </div>
+                    <a href="" class="comprar">Comprar en Amazon</a>
+
+                </div>
+
+                <div class="producto ver-mas" onclick="window.location.href='marcas/remington.html'">Ver más</div>
+            </div>
+            <div class="subcategoria">
+                <h3 class="subcategoria">Secadores ionicos Cecotec</h3>
+                <a href="marcas/Cecotec.html" class="ver-mas-link">Ver más</a>
+            </div>
+            <div class="productos">
+                <div class="producto" onclick="window.location.href='https://amzn.to/4bkZqpN'">
+                    <img src="https://m.media-amazon.com/images/I/51pcFKaEI7L._AC_UL480_FMwebp_QL65_.jpg" alt="Producto">
+                    <p>Cecotec Secador de Pelo Iónico Bamba IoniCare 5200 Aura Black. 2300W</p>
+                    <div class="overlay">
+                        <div class="progress-label">Precio 22,91€</div>
+                        <div class="progress-bar">
+                            <div class="progress-bar-fill" style="width: 12%;"></div>
+                        </div>
+                        <div class="progress-label">Calidad-Precio</div>
+                        <div class="progress-bar">
+                            <div class="progress-bar-fill" style="width: 80%;"></div>
+                        </div>
+                        <div class="progress-label">Potencia</div>
+                        <div class="progress-bar">
+                            <div class="progress-bar-fill" style="width: 90%;"></div>
+                        </div>
+                        <div class="progress-label">Nuestra Valoración</div>
+                        <div class="progress-bar">
+                            <div class="progress-bar-fill" style="width: 85%;"></div>
+                        </div>
+                    </div>
+                    <a href="" class="comprar">Comprar en Amazon</a>
+
+                </div>
+                <div class="producto" onclick="window.location.href='https://amzn.to/3ERb3Jb'">
+                    <img src="https://m.media-amazon.com/images/I/71-Dz1DdIsL._AC_UL480_FMwebp_QL65_.jpg" alt="Producto">
+                    <p>Cecotec Secador de Pelo Ionicare Rockstar Style Yellow, Secador Muy Compacto y Ligero, Motor 1500W</p>
+                    <div class="overlay">
+                        <div class="progress-bar">
+                            <div class="progress-label">Precio: 29,90€</div>
+                            <div class="progress-bar-fill" style="width: 17%;"></div>
+                        </div>
+                        <div class="progress-label">Calidad-Precio</div>
+                        <div class="progress-bar">
+                            <div class="progress-bar-fill" style="width: 66%;"></div>
+                        </div>
+                        <div class="progress-label">Potencia</div>
+                        <div class="progress-bar">
+                            <div class="progress-bar-fill" style="width: 58%;"></div>
+                        </div>
+                        <div class="progress-label">Nuestra Valoración</div>
+                        <div class="progress-bar">
+                            <div class="progress-bar-fill" style="width: 60%;"></div>
+                        </div>
+                    </div>
+                    <a href="" class="comprar">Comprar en Amazon</a>
+
+                </div>
+                <div class="producto" onclick="window.location.href='https://amzn.to/4bnCDtG'">
+                    <img src="https://m.media-amazon.com/images/I/71BOrb5fz6L._AC_UL480_FMwebp_QL65_.jpg" alt="Producto">
+                    <p>Cecotec Secador Compacto de Pelo Bamba IoniCare Power&Go. Potencia 2400</p>
+                    <div class="overlay">
+                        <div class="progress-bar">
+                            <div class="progress-label">Precio: 33,99€</div>
+                            <div class="progress-bar-fill" style="width: 17%;"></div>
+                        </div>
+                        <div class="progress-label">Calidad-Precio</div>
+                        <div class="progress-bar">
+                            <div class="progress-bar-fill" style="width: 65%;"></div>
+                        </div>
+                        <div class="progress-label">Potencia</div>
+                        <div class="progress-bar">
+                            <div class="progress-bar-fill" style="width: 90%;"></div>
+                        </div>
+                        <div class="progress-label">Nuestra Valoración</div>
+                        <div class="progress-bar">
+                            <div class="progress-bar-fill" style="width: 85%;"></div>
+                        </div>
+                    </div>
+                    <a href="" class="comprar">Comprar en Amazon</a>
+
+                </div>
+                <div class="producto" onclick="window.location.href='https://amzn.to/3QTQT41'">
+                    <img src="https://m.media-amazon.com/images/I/61lnbjgk2yL._AC_UL480_FMwebp_QL65_.jpg" alt="Producto" style="max-width: 150px;">
+                    <p>Cecotec Secador de pelo iónico Bamba IoniCare 5350</p>
+                    <div class="overlay">
+                        <div class="progress-bar">
+                            <div class="progress-label">Precio: 33,99€</div>
+                            <div class="progress-bar-fill" style="width: 17%;"></div>
+                        </div>
+                        <div class="progress-label">Calidad-Precio</div>
+                        <div class="progress-bar">
+                            <div class="progress-bar-fill" style="width: 80%;"></div>
+                        </div>
+                        <div class="progress-label">Potencia</div>
+                        <div class="progress-bar">
+                            <div class="progress-bar-fill" style="width: 90%;"></div>
+                        </div>
+                        <div class="progress-label">Nuestra Valoración</div>
+                        <div class="progress-bar">
+                            <div class="progress-bar-fill" style="width: 85%;"></div>
+                        </div>
+                    </div>
+                    <a href="" class="comprar">Comprar en Amazon</a>
+
+                </div>
+
+                <div class="producto ver-mas" onclick="window.location.href='marcas/Cecotec.html'">Ver más</div>
+            </div>
+
+            <div class="subcategoria">
+                <h3 class="subcategoria">Secadores ionicos Xiaomi</h3>
+                <a href="marcas/xiaomi.html" class="ver-mas-link">Ver más</a>
+            </div>
+            <div class="productos">
+                <div class="producto" onclick="window.location.href='https://amzn.to/41gerED'">
+                    <img src="https://m.media-amazon.com/images/I/515jzmkDIVL._AC_UL480_FMwebp_QL65_.jpg" alt="Producto">
+                    <p>Mi Ionic Hairdryer H300 CMJ0LX, Blanco</p>
+                    <div class="overlay">
+                        <div class="progress-label">Precio: 45,00€</div>
+                        <div class="progress-bar">
+                            <div class="progress-bar-fill" style="width: 29%;"></div>
+                        </div>
+                        <div class="progress-label">Calidad-Precio</div>
+                        <div class="progress-bar">
+                            <div class="progress-bar-fill" style="width: 80%;"></div>
+                        </div>
+                        <div class="progress-label">Potencia</div>
+                        <div class="progress-bar">
+                            <div class="progress-bar-fill" style="width: 90%;"></div>
+                        </div>
+                        <div class="progress-label">Nuestra Valoración</div>
+                        <div class="progress-bar">
+                            <div class="progress-bar-fill" style="width: 85%;"></div>
+                        </div>
+                    </div>
+                    <a href="" class="comprar">Comprar en Amazon</a>
+
+                </div>
+                <div class="producto" onclick="window.location.href='https://amzn.to/41vFvkU'">
+                    <img src="https://m.media-amazon.com/images/I/51aqrOkZmHL._AC_UL480_FMwebp_QL65_.jpg" alt="Producto" style="width: 70px;">
+                    <p>Xiaomi Compact Hair Dryer</p>
+                    <div class="overlay">
+                        <div class="progress-label">Precio: 21,90€</div>
+                        <div class="progress-bar">
+                            <div class="progress-bar-fill" style="width: 17%;"></div>
+                        </div>
+                        <div class="progress-label">Calidad-Precio</div>
+                        <div class="progress-bar">
+                            <div class="progress-bar-fill" style="width: 80%;"></div>
+                        </div>
+                        <div class="progress-label">Potencia</div>
+                        <div class="progress-bar">
+                            <div class="progress-bar-fill" style="width: 90%;"></div>
+                        </div>
+                        <div class="progress-label">Nuestra Valoración</div>
+                        <div class="progress-bar">
+                            <div class="progress-bar-fill" style="width: 85%;"></div>
+                        </div>
+                    </div>
+                    <a href="" class="comprar">Comprar en Amazon</a>
+
+                </div>
+                <div class="producto" onclick="window.location.href='https://amzn.to/418Hfiu'">
+                    <img src="https://m.media-amazon.com/images/I/61JMpldsCqL._AC_UL480_FMwebp_QL65_.jpg" alt="Producto" style="width: 50px;">
+                    <p>Secador Xiaomi Compact Hair Dryer H101/ 1600W/ Rosa</p>
+                    <div class="overlay">
+                        <div class="progress-label">Precio: 21,90€</div>
+                        <div class="progress-bar">
+                            <div class="progress-bar-fill" style="width: 17%;"></div>
+                        </div>
+                        <div class="progress-label">Calidad-Precio</div>
+                        <div class="progress-bar">
+                            <div class="progress-bar-fill" style="width: 80%;"></div>
+                        </div>
+                        <div class="progress-label">Potencia</div>
+                        <div class="progress-bar">
+                            <div class="progress-bar-fill" style="width: 90%;"></div>
+                        </div>
+                        <div class="progress-label">Nuestra Valoración</div>
+                        <div class="progress-bar">
+                            <div class="progress-bar-fill" style="width: 85%;"></div>
+                        </div>
+                    </div>
+                    <a href="" class="comprar">Comprar en Amazon</a>
+
+                </div>
+
+                <div class="producto ver-mas" onclick="window.location.href='marcas/xiaomi.html'">Ver más</div>
+
+            </div>
+            <div class="subcategoria">
+                <h3 class="subcategoria">Secadores ionicos Dyson</h3>
+                <a href="marcas/dyson.html" class="ver-mas-link">Ver más</a>
+            </div>
+            <div class="productos">
+                <div class="producto" onclick="window.location.href='https://amzn.to/41vElWq'">
+                    <img src="https://m.media-amazon.com/images/I/51gCOk5s+QL._AC_UL480_FMwebp_QL65_.jpg" alt="Producto">
+                    <p>DYSON Set de peinado de secador de pelo supersónico. Hierro & Fucsia</p>
+                    <div class="overlay">
+                        <div class="progress-label">Precio: 369,99€</div>
+                        <div class="progress-bar">
+                            <div class="progress-bar-fill" style="width: 100%;"></div>
+                        </div>
+                        <div class="progress-label">Calidad-Precio</div>
+                        <div class="progress-bar">
+                            <div class="progress-bar-fill" style="width: 80%;"></div>
+                        </div>
+                        <div class="progress-label">Potencia</div>
+                        <div class="progress-bar">
+                            <div class="progress-bar-fill" style="width: 90%;"></div>
+                        </div>
+                        <div class="progress-label">Nuestra Valoración</div>
+                        <div class="progress-bar">
+                            <div class="progress-bar-fill" style="width: 85%;"></div>
+                        </div>
+                    </div>
+                    <a href="" class="comprar">Comprar en Amazon</a>
+
+                </div>
+                <div class="producto" onclick="window.location.href='https://amzn.to/3Dgaacn'">
+                    <img src="https://images-eu.ssl-images-amazon.com/images/I/51qTUtlhhPL._AC_UL232_SR232,232_.jpg" alt="Producto" style="margin-top: 20px;max-width: 200px; width: 200px;">
+                    <p>Dyson Supersonic Haartrockner HD07 - Ceramic Patina / Topaz</p>
+                    <div class="overlay">
+                        <div class="progress-label">Precio: 495,90€</div>
+                        <div class="progress-bar">
+                            <div class="progress-bar-fill" style="width: 100%;"></div>
+                        </div>
+                        <div class="progress-label">Calidad-Precio</div>
+                        <div class="progress-bar">
+                            <div class="progress-bar-fill" style="width: 80%;"></div>
+                        </div>
+                        <div class="progress-label">Potencia</div>
+                        <div class="progress-bar">
+                            <div class="progress-bar-fill" style="width: 90%;"></div>
+                        </div>
+                        <div class="progress-label">Nuestra Valoración</div>
+                        <div class="progress-bar">
+                            <div class="progress-bar-fill" style="width: 85%;"></div>
+                        </div>
+                    </div>
+                    <a href="" class="comprar">Comprar en Amazon</a>
+
+                </div>
+                <div class="producto" onclick="window.location.href='https://amzn.to/3EV8RjO'">
+                    <img src="https://m.media-amazon.com/images/I/41Z918Yu5ML._AC_UL480_FMwebp_QL65_.jpg" alt="Producto" style="max-width: 200px;width: 200px;">
+                    <p>Dyson Supersonic Nural HD16 - Secador de pelo </p>
+                    <div class="overlay">
+                        <div class="progress-label">Precio: 449,90€</div>
+                        <div class="progress-bar">
+                            <div class="progress-bar-fill" style="width: 100%;"></div>
+                        </div>
+                        <div class="progress-label">Calidad-Precio</div>
+                        <div class="progress-bar">
+                            <div class="progress-bar-fill" style="width: 80%;"></div>
+                        </div>
+                        <div class="progress-label">Potencia</div>
+                        <div class="progress-bar">
+                            <div class="progress-bar-fill" style="width: 90%;"></div>
+                        </div>
+                        <div class="progress-label">Nuestra Valoración</div>
+                        <div class="progress-bar">
+                            <div class="progress-bar-fill" style="width: 85%;"></div>
+                        </div>
+                    </div>
+                    <a href="" class="comprar">Comprar en Amazon</a>
+
+                </div>
+
+                <div class="producto ver-mas" onclick="window.location.href='marcas/dyson.html'">Ver más</div>
+
+            </div>
+        </div>
+            <!-- Botón para volver al inicio -->
+    <div class="botonvuelta">
+        <a href="index.html" class="volver">Volver al inicio</a>
+    </div>
+
+    </div>
+    <footer>
+        <p>&copy; Ionic curls - Todos los derechos reservados</p>
+    </footer>
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById("menu");
+            if (menu.style.left === "0px") {
+                menu.style.left = "-250px";
+            } else {
+                menu.style.left = "0px";
+            }
+        }
+    </script>
+</body>
+</html>
