@@ -1,5 +1,4 @@
 User-agent: *
 Disallow: /pie/
 Allow: /
-Allow: /sitemap_new.txt
 Sitemap: https://ion-curls.vercel.app/sitemap_new.txt
