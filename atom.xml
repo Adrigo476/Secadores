@@ -1,112 +1,146 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Ion Curls</title>
+  <link href="https://ion-curls.vercel.app/"/>
+  <updated>2025-02-28T13:37:48+00:00</updated>
 
+  <!-- Entrada para la página principal -->
+  <entry>
+    <title>Página Principal</title>
+    <link href="https://ion-curls.vercel.app/index.html"/>
+    <updated>2025-02-28T13:37:48+00:00</updated>
+  </entry>
 
-<url>
-  <loc>https://ion-curls.vercel.app/index.html</loc>
-  <lastmod>2025-02-28T13:37:48+00:00</lastmod>
-  <priority>1.00</priority>
-</url>
-<url>
-  <loc>https://ion-curls.vercel.app/que.html</loc>
-  <lastmod>2025-02-28T13:37:49+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://ion-curls.vercel.app/como.html</loc>
-  <lastmod>2025-02-28T13:37:49+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://ion-curls.vercel.app/beneficios.html</loc>
-  <lastmod>2025-02-28T13:37:49+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://ion-curls.vercel.app/elegir.html</loc>
-  <lastmod>2025-02-28T13:37:49+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://ion-curls.vercel.app/recomendaciones.html</loc>
-  <lastmod>2025-02-28T13:37:49+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://ion-curls.vercel.app/rese%C3%B1as/</loc>
-  <lastmod>2025-02-28T13:37:49+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://ion-curls.vercel.app/pie/legal.html</loc>
-  <lastmod>2025-02-28T13:37:50+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://ion-curls.vercel.app/pie/privacidad.html</loc>
-  <lastmod>2025-02-28T13:37:50+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://ion-curls.vercel.app/rese%C3%B1as/index.html</loc>
-  <lastmod>2025-02-28T13:37:50+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://ion-curls.vercel.app/marcas/Remington.html</loc>
-  <lastmod>2025-02-28T13:37:50+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://ion-curls.vercel.app/marcas/Cecotec.html</loc>
-  <lastmod>2025-02-28T13:37:50+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://ion-curls.vercel.app/marcas/xiaomi.html</loc>
-  <lastmod>2025-02-28T13:37:50+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://ion-curls.vercel.app/marcas/dyson.html</loc>
-  <lastmod>2025-02-28T13:37:51+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://ion-curls.vercel.app/rese%C3%B1as/Parlux%20Powerlight%20385.html</loc>
-  <lastmod>2025-02-28T13:37:51+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://ion-curls.vercel.app/rese%C3%B1as/Cecotec%20Bamba.html</loc>
-  <lastmod>2025-02-28T13:37:51+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://ion-curls.vercel.app/rese%C3%B1as/Babyliss%20Pro.html</loc>
-  <lastmod>2025-02-28T13:37:51+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://ion-curls.vercel.app/rese%C3%B1as/Xiaomi%20Mi%20Ionic.html</loc>
-  <lastmod>2025-02-28T13:37:51+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://ion-curls.vercel.app/rese%C3%B1as/Twister%203000.html</loc>
-  <lastmod>2025-02-28T13:37:51+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://ion-curls.vercel.app/rese%C3%B1as/Dyson%20Supersonic.html</loc>
-  <lastmod>2025-02-28T13:37:51+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
+  <!-- Entrada para "¿Qué es?" -->
+  <entry>
+    <title>¿Qué es?</title>
+    <link href="https://ion-curls.vercel.app/que.html"/>
+    <updated>2025-02-28T13:37:49+00:00</updated>
+  </entry>
 
+  <!-- Entrada para "¿Cómo funciona?" -->
+  <entry>
+    <title>¿Cómo funciona?</title>
+    <link href="https://ion-curls.vercel.app/como.html"/>
+    <updated>2025-02-28T13:37:49+00:00</updated>
+  </entry>
 
-</urlset>
+  <!-- Entrada para "Beneficios" -->
+  <entry>
+    <title>Beneficios</title>
+    <link href="https://ion-curls.vercel.app/beneficios.html"/>
+    <updated>2025-02-28T13:37:49+00:00</updated>
+  </entry>
+
+  <!-- Entrada para "Cómo elegir" -->
+  <entry>
+    <title>Cómo elegir</title>
+    <link href="https://ion-curls.vercel.app/elegir.html"/>
+    <updated>2025-02-28T13:37:49+00:00</updated>
+  </entry>
+
+  <!-- Entrada para "Recomendaciones" -->
+  <entry>
+    <title>Recomendaciones</title>
+    <link href="https://ion-curls.vercel.app/recomendaciones.html"/>
+    <updated>2025-02-28T13:37:49+00:00</updated>
+  </entry>
+
+  <!-- Entrada para "Reseñas" -->
+  <entry>
+    <title>Reseñas</title>
+    <link href="https://ion-curls.vercel.app/rese%C3%B1as/"/>
+    <updated>2025-02-28T13:37:49+00:00</updated>
+  </entry>
+
+  <!-- Entrada para "Legal" -->
+  <entry>
+    <title>Legal</title>
+    <link href="https://ion-curls.vercel.app/pie/legal.html"/>
+    <updated>2025-02-28T13:37:50+00:00</updated>
+  </entry>
+
+  <!-- Entrada para "Privacidad" -->
+  <entry>
+    <title>Privacidad</title>
+    <link href="https://ion-curls.vercel.app/pie/privacidad.html"/>
+    <updated>2025-02-28T13:37:50+00:00</updated>
+  </entry>
+
+  <!-- Entrada para "Reseñas - Index" -->
+  <entry>
+    <title>Reseñas - Index</title>
+    <link href="https://ion-curls.vercel.app/rese%C3%B1as/index.html"/>
+    <updated>2025-02-28T13:37:50+00:00</updated>
+  </entry>
+
+  <!-- Entrada para "Marca - Remington" -->
+  <entry>
+    <title>Marca - Remington</title>
+    <link href="https://ion-curls.vercel.app/marcas/Remington.html"/>
+    <updated>2025-02-28T13:37:50+00:00</updated>
+  </entry>
+
+  <!-- Entrada para "Marca - Cecotec" -->
+  <entry>
+    <title>Marca - Cecotec</title>
+    <link href="https://ion-curls.vercel.app/marcas/Cecotec.html"/>
+    <updated>2025-02-28T13:37:50+00:00</updated>
+  </entry>
+
+  <!-- Entrada para "Marca - Xiaomi" -->
+  <entry>
+    <title>Marca - Xiaomi</title>
+    <link href="https://ion-curls.vercel.app/marcas/xiaomi.html"/>
+    <updated>2025-02-28T13:37:50+00:00</updated>
+  </entry>
+
+  <!-- Entrada para "Marca - Dyson" -->
+  <entry>
+    <title>Marca - Dyson</title>
+    <link href="https://ion-curls.vercel.app/marcas/dyson.html"/>
+    <updated>2025-02-28T13:37:51+00:00</updated>
+  </entry>
+
+  <!-- Entrada para "Reseña - Parlux Powerlight 385" -->
+  <entry>
+    <title>Reseña - Parlux Powerlight 385</title>
+    <link href="https://ion-curls.vercel.app/rese%C3%B1as/Parlux%20Powerlight%20385.html"/>
+    <updated>2025-02-28T13:37:51+00:00</updated>
+  </entry>
+
+  <!-- Entrada para "Reseña - Cecotec Bamba" -->
+  <entry>
+    <title>Reseña - Cecotec Bamba</title>
+    <link href="https://ion-curls.vercel.app/rese%C3%B1as/Cecotec%20Bamba.html"/>
+    <updated>2025-02-28T13:37:51+00:00</updated>
+  </entry>
+
+  <!-- Entrada para "Reseña - Babyliss Pro" -->
+  <entry>
+    <title>Reseña - Babyliss Pro</title>
+    <link href="https://ion-curls.vercel.app/rese%C3%B1as/Babyliss%20Pro.html"/>
+    <updated>2025-02-28T13:37:51+00:00</updated>
+  </entry>
+
+  <!-- Entrada para "Reseña - Xiaomi Mi Ionic" -->
+  <entry>
+    <title>Reseña - Xiaomi Mi Ionic</title>
+    <link href="https://ion-curls.vercel.app/rese%C3%B1as/Xiaomi%20Mi%20Ionic.html"/>
+    <updated>2025-02-28T13:37:51+00:00</updated>
+  </entry>
+
+  <!-- Entrada para "Reseña - Twister 3000" -->
+  <entry>
+    <title>Reseña - Twister 3000</title>
+    <link href="https://ion-curls.vercel.app/rese%C3%B1as/Twister%203000.html"/>
+    <updated>2025-02-28T13:37:51+00:00</updated>
+  </entry>
+
+  <!-- Entrada para "Reseña - Dyson Supersonic" -->
+  <entry>
+    <title>Reseña - Dyson Supersonic</title>
+    <link href="https://ion-curls.vercel.app/rese%C3%B1as/Dyson%20Supersonic.html"/>
+    <updated>2025-02-28T13:37:51+00:00</updated>
+  </entry>
+</feed>
